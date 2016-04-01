@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<remv1:Remediation-Plugin xmlns:remv1="RemediationVersion1.xsd" Name="FortiGate" Guid="115baba5-07ee-4236-98e4-0465d4db443e" Version="1" IsLogRhythmPlugin="true">
+  	<remv1:Action Name="Add IP to LogRhythm Blocklist" Command="C:\Windows\System32\WindowsPowershell\v1.0\powershell.exe">
+  		<remv1:ConstantParameter Name="Script" Switch="-nop -file fortinet.ps1" Order="0" />
+       	<remv1:StringParameter Name="Username" Switch="" Order="1">
+      		<remv1:DefaultInput>
+        		<remv1:StaticInput Value="admin" />
+      		</remv1:DefaultInput>
+    	</remv1:StringParameter>
+    	<remv1:EncryptedParameter>
+    		<remv1:StringParameter Name="Password" Switch="" Order="2"></remv1:StringParameter>
+    	</remv1:EncryptedParameter>
+    	<remv1:StringParameter Name="FortiGate IP" Switch="" Order="3"></remv1:StringParameter>
+    	<remv1:StringParameter Name="FortiGate Admin Port" Switch="" Order="4">
+    		<remv1:DefaultInput>
+        		<remv1:StaticInput Value="8443" />
+        	</remv1:DefaultInput>
+    	</remv1:StringParameter>
+    	<remv1:ConstantParameter Name="Command (add_ip or add_domain)" Switch="add_ip" Order="5" />
+    	<remv1:StringParameter Name="Target IP" Switch="" Order="6">
+    		<remv1:DefaultInput>
+        		<remv1:SIP />
+      		</remv1:DefaultInput>
+		</remv1:StringParameter>
+   	</remv1:Action>
+    <remv1:Action Name="Add Domain to LogRhythm Blocklist" Command="C:\Windows\System32\WindowsPowershell\v1.0\powershell.exe">
+    	<remv1:ConstantParameter Name="Script" Switch="-nop -file fortinet.ps1" Order="0" />
+    	<remv1:StringParameter Name="Username" Switch="" Order="1">
+      		<remv1:DefaultInput>
+        		<remv1:StaticInput Value="admin" />
+      		</remv1:DefaultInput>
+    	</remv1:StringParameter>
+    	<remv1:EncryptedParameter>
+	    	<remv1:StringParameter Name="Password" Switch="" Order="2"></remv1:StringParameter>
+    	</remv1:EncryptedParameter>
+    	<remv1:StringParameter Name="FortiGate IP" Switch="" Order="3"></remv1:StringParameter>
+    	<remv1:StringParameter Name="FortiGate Admin Port" Switch="" Order="4">
+    		<remv1:DefaultInput>
+        		<remv1:StaticInput Value="8443" />
+        	</remv1:DefaultInput>
+    	</remv1:StringParameter>
+    	<remv1:ConstantParameter Name="Command (add_ip or add_domain)" Switch="add_domain" Order="5" />
+    	<remv1:StringParameter Name="Target Domain" Switch="" Order="6">
+    		<remv1:DefaultInput>
+        		<remv1:SHostName />
+      		</remv1:DefaultInput>
+		</remv1:StringParameter>
+  	</remv1:Action>
+</remv1:Remediation-Plugin>
