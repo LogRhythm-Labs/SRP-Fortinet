@@ -1,3 +1,8 @@
+LogRhythm Threat Research
+Remote File Extraction SmartResponse
+Matt Willems | @MattWillems | matt.willems@logrhythm.com
+v0.1 -- April, 2016
+
 # SRP-Fortinet
 SmartResponse plugin to add IPs and FQDNs to an Address Group.
 
