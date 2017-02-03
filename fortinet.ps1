@@ -12,8 +12,12 @@
 # 2. GET group membership for 'logrhythm-blocklist' group
 # 4. Add specified object to 'logrhythm-blocklist' group
 
-# Heavily rewritten by Matt Willems
-# 2016-02-08
+#==========================================#
+# LogRhythm Threat Research                #
+# Carbon Black - SmartResponse             #
+# matt . willems @ logrhythm . com         #
+# v0.1  --  April, 2016                    #
+#==========================================#
 
 # Copyright 2016 LogRhythm Inc.   
 # Licensed under the MIT License. See LICENSE file in the project root for full license information.
@@ -270,8 +274,8 @@ $logout = & $curl -s -X POST "$baseURL/logout"
 # SIG # Begin signature block
 # MIIdxgYJKoZIhvcNAQcCoIIdtzCCHbMCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUulSgFWM9MuLbwQV+iN3GefLr
-# aeWgghi2MIID7jCCA1egAwIBAgIQfpPr+3zGTlnqS5p31Ab8OzANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUkSOYJqj998qW47SOcrrF+k9/
+# iTSgghi2MIID7jCCA1egAwIBAgIQfpPr+3zGTlnqS5p31Ab8OzANBgkqhkiG9w0B
 # AQUFADCBizELMAkGA1UEBhMCWkExFTATBgNVBAgTDFdlc3Rlcm4gQ2FwZTEUMBIG
 # A1UEBxMLRHVyYmFudmlsbGUxDzANBgNVBAoTBlRoYXd0ZTEdMBsGA1UECxMUVGhh
 # d3RlIENlcnRpZmljYXRpb24xHzAdBgNVBAMTFlRoYXd0ZSBUaW1lc3RhbXBpbmcg
@@ -409,22 +413,22 @@ $logout = & $curl -s -X POST "$baseURL/logout"
 # MDEuMCwGA1UEAxMlVmVyaVNpZ24gQ2xhc3MgMyBDb2RlIFNpZ25pbmcgMjAxMCBD
 # QQIQb86k4QlOrKAuOolBFzl1RTAJBgUrDgMCGgUAoHgwGAYKKwYBBAGCNwIBDDEK
 # MAigAoAAoQKAADAZBgkqhkiG9w0BCQMxDAYKKwYBBAGCNwIBBDAcBgorBgEEAYI3
-# AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUq8swrfVSWUKDbV8s
-# G3NEql9lwZAwDQYJKoZIhvcNAQEBBQAEggEAaC4dlWSE+prynT7AAyf+F1vbJ0pL
-# e3fb1jh0czTGDXPfHmJDq1u9HHE8suE6V1ScXCy2En4nttD5S+OEad/8qjGLcAdS
-# blziqBEmGt2nAPjcSZ2iTibAd4ywqRinDrRDOHltrISLHqCkPYXvOoUlCje7hG8a
-# 9SO3FITSPmGzNu5H25lkCLABHWza/lxfMShRevmJzVCMdvwsjW6pizpkfcMeSwaP
-# 2pIH87+IZFbhUmlD5/KBJwekmYwhVQWdzM1uJag9JerV7GfGCHoF/VVpAIbttblv
-# 64vAE3V0J3Lv/a0mTQ67ErggI+wKkRo+a+OnENMHEYlCH+vf7HrB7I927KGCAgsw
+# AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQU0IbeAd5T7CKD8aYL
+# DVJnZ6gkHOgwDQYJKoZIhvcNAQEBBQAEggEAFhT1sVQZ6U1GGOWLB3p2s4Sto08S
+# HKGGyheYbriaaDaBP1x1ljFyQOCTfrVrTx+3BnbKQQVmnvoaWmYCvc8KrgmE6BXa
+# J581x6HMnRIGz22nlpjxghqU0QIuW85K3FrVVlNAxVqDvhGPQK5KHBCYyWzunp8b
+# PDR+EnkX1SxoCJ5QUJwjh2Fhy6M8NE86R5Himb1FEkfrN9PhJAen5MrYSCN8xl8S
+# /rcEsYCtXzGb/yEXgSY1RjPdLdm+jJxRIQaKenSQ+6qyFzknO0ppM0R7/YGWgWpf
+# wVxHmiGDxVjn7fMyv873PE9t+aKyrW9P9a7jkfMI3oKvWm+VRun3Bdy7kaGCAgsw
 # ggIHBgkqhkiG9w0BCQYxggH4MIIB9AIBATByMF4xCzAJBgNVBAYTAlVTMR0wGwYD
 # VQQKExRTeW1hbnRlYyBDb3Jwb3JhdGlvbjEwMC4GA1UEAxMnU3ltYW50ZWMgVGlt
 # ZSBTdGFtcGluZyBTZXJ2aWNlcyBDQSAtIEcyAhAOz/Q4yP6/NW4E2GqYGxpQMAkG
 # BSsOAwIaBQCgXTAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJ
-# BTEPFw0xNzAxMTIxODM4MTlaMCMGCSqGSIb3DQEJBDEWBBRuDXx0v0/8//H2nZkv
-# KrLt5MHfOjANBgkqhkiG9w0BAQEFAASCAQCM3gCtpfWpXxpv4+MRDNaKAZcHvjdO
-# Fd6QcTuOa5HhKVJPAQzWoGkGiw7fa5tXzVUY4T2E6eAHd4JG3gWccm6kjWEUP0R0
-# +Fwa8oe6K9Xi5RqheeTR3wsqTvSqXY1rt5kXPHJzTj7gG9UiNaEcCeKz3AjwsfRJ
-# WNiVwFr2+yONkWO+swcGuzzo4zx+a/1okSN/Te/U2SSiHwbLJA86XliA/abeBCsO
-# zQOlweimV0CG3VNmugoSzgbSZDyE0Boo1fwP3CG7x51ueK5iZ5cn5aV3GLfvstWA
-# ZFxnxfCYhqU3CmBsKjq53LhldbWMYr2vGLxjfpyU37ET0jJhpuUrhq+D
+# BTEPFw0xNzAyMDMyMjEwMjdaMCMGCSqGSIb3DQEJBDEWBBRGsjNkZzd7UFPItqOK
+# azkY5To3pDANBgkqhkiG9w0BAQEFAASCAQBJT2TMog2hsIGNk3pXA7MxbBreCoRj
+# ymcqKPXvyctbUAhPtbk9D56ZMKY02zuxvpR6QlKAB7yqDdz2zF+poHv6k/WIyLfF
+# +BSitOdg5cfZBMn7No3RXebhe+zdrGZ7C48C55lsIVY4odsnQPIoI3t56C1apGm/
+# XaSINL2EoIBaPhF0N0oeRvBjq/9rDxIX7KhRgsSJqV22pofhyoprlQTi5Sy8GW37
+# S4tMhCLbI+egigHHJ7iM8BtZZhsg7zX5e9yrGTygMaGrhCfkwTXb96ie4q6loVpz
+# BNcnNYrai+KMnhB1DkhJrixdVhyRfrrRgTJmbsYgB9LJ2WN5so/+LQdR
 # SIG # End signature block
